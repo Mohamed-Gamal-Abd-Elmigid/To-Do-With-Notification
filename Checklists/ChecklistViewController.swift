@@ -10,15 +10,16 @@ import UIKit
 
 class ChecklistViewController : UITableViewController , AddItemViewControllerDelegate
 {
+    var checklist: Checklist!
     @IBOutlet weak var checkLabel: UILabel!
     var items = [ChecklistItem]()
    
     override func viewDidLoad()
     {
-       navigationController?.navigationBar.prefersLargeTitles = true
+       navigationController?.navigationBar.prefersLargeTitles = false
         
         super.viewDidLoad()
-        
+        title = checklist.name
         loadCheckItems()
         
 //        print("Documents folder is \(documentsDirectory())")
