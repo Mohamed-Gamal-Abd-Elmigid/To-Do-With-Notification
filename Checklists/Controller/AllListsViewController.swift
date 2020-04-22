@@ -26,9 +26,17 @@ class AllListsViewController: UITableViewController , ListDetailViewControllerDe
        lists.append(list)
        list = Checklist(name: "To Do")
        lists.append(list)
-        
+      
+
+        for list in lists
+        {
+        let item = ChecklistItem()
+        item.text = "Item for \(list.name)"
+        list.items.append(item)
+        }
         loadLists()
             
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     

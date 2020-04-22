@@ -70,7 +70,7 @@ class ChecklistViewController : UITableViewController , AddItemViewControllerDel
     
     func addItemViewController(_ controller: AddItemViewController, didFinishEditing item: ChecklistItem)
     {
-        if let index = items.firstIndex(of: item)
+        if let index = checklist.items.firstIndex(of: item)
             {
                 let indexPath = IndexPath(row: index, section: 0)
                     if let cell = tableView.cellForRow(at: indexPath)
@@ -87,8 +87,8 @@ class ChecklistViewController : UITableViewController , AddItemViewControllerDel
             
     func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem)
     {
-        let newRowIndex = items.count
-        items.append(item)
+        let newRowIndex = checklist.items.count
+        checklist.items.append(item)
         
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
@@ -107,7 +107,7 @@ class ChecklistViewController : UITableViewController , AddItemViewControllerDel
     //Delete Rows
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
-        items.remove(at: indexPath.row)
+        checklist.items.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
         
@@ -120,7 +120,7 @@ class ChecklistViewController : UITableViewController , AddItemViewControllerDel
     {
             if let cell = tableView.cellForRow(at: indexPath)
             {
-                let item = items[indexPath.row]
+                let item = checklist.items[indexPath.row]
                 item.checked = !item.checked
                 //  configureCheckmark(for: cell, at: indexPath)
 //            }
@@ -133,14 +133,14 @@ class ChecklistViewController : UITableViewController , AddItemViewControllerDel
 
     override func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int) -> Int
     {
-        return items.count
+        return checklist.items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem",for: indexPath)
-        let item = items[indexPath.row]
+        let item = checklist.items[indexPath.row]
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
         //configureCheckmark(for: cell, at: indexPath)
@@ -191,9 +191,8 @@ class ChecklistViewController : UITableViewController , AddItemViewControllerDel
         {
             let controller = segue.destination as! AddItemViewController
             controller.delegate = self
-            if let indexPath = tableView.indexPath(
-                for: sender as! UITableViewCell) {
-                    controller.itemToEdit = items[indexPath.row]
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+                controller.itemToEdit = checklist.items[indexPath.row]
                 }
             }
     }

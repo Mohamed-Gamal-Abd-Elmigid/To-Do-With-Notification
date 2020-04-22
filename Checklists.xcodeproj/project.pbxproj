@@ -47,6 +47,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044B1A96245012D2004A7581 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044B1A90244E8587004A7581 /* Checklist.swift */,
+				0446ABE224495069004E2602 /* ChecklistItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044B1A97245012E6004A7581 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044B1A8E244E806D004A7581 /* AllListsViewController.swift */,
+				044B1A92244E896E004A7581 /* ListDetailViewController.swift */,
+				049457BE2447F31600D2BD0E /* ChecklistViewController.swift */,
+				045F1CD9244A6A1B00C8315A /* AddItemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		044B1A9824501305004A7581 /* Resorces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resorces;
+			sourceTree = "<group>";
+		};
+		044B1A9924501336004A7581 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049457C02447F31600D2BD0E /* Main.storyboard */,
+				049457C32447F31800D2BD0E /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		049457AE2447F31600D2BD0E = {
 			isa = PBXGroup;
 			children = (
@@ -66,16 +102,12 @@
 		049457B92447F31600D2BD0E /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				044B1A9824501305004A7581 /* Resorces */,
+				044B1A97245012E6004A7581 /* Controller */,
+				044B1A96245012D2004A7581 /* Model */,
+				044B1A9924501336004A7581 /* View */,
 				049457BA2447F31600D2BD0E /* AppDelegate.swift */,
 				049457BC2447F31600D2BD0E /* SceneDelegate.swift */,
-				044B1A8E244E806D004A7581 /* AllListsViewController.swift */,
-				044B1A92244E896E004A7581 /* ListDetailViewController.swift */,
-				044B1A90244E8587004A7581 /* Checklist.swift */,
-				049457BE2447F31600D2BD0E /* ChecklistViewController.swift */,
-				045F1CD9244A6A1B00C8315A /* AddItemViewController.swift */,
-				0446ABE224495069004E2602 /* ChecklistItem.swift */,
-				049457C02447F31600D2BD0E /* Main.storyboard */,
-				049457C32447F31800D2BD0E /* Assets.xcassets */,
 				049457C52447F31800D2BD0E /* LaunchScreen.storyboard */,
 				049457C82447F31800D2BD0E /* Info.plist */,
 			);

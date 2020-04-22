@@ -17,4 +17,5 @@ class Checklist: NSObject , Codable
         self.name = name
         super.init()
     }
+    var items = [ChecklistItem]()
 }
