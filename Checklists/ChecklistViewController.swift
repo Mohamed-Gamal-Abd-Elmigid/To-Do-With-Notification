@@ -230,6 +230,23 @@ class ChecklistViewController : UITableViewController , AddItemViewControllerDel
             }
         }
     }
-
+    
+    // Re order table view cell
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    {
+        let itemToMove = items[sourceIndexPath.row]
+        items.remove(at: sourceIndexPath.row)
+        items.insert(itemToMove, at: destinationIndexPath.row)
+        saveCheckItems()
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    @IBAction func startEditing(_ sender: Any) {
+        isEditing = !isEditing
+    }
 }
 

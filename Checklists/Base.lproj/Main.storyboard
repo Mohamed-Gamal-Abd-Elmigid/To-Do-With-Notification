@@ -141,11 +141,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Name of the Checklis" largeTitleDisplayMode="never" id="WRl-RW-IFi">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="xRe-gl-93f">
-                            <connections>
-                                <segue destination="teN-CC-Qao" kind="show" identifier="AddItem" id="6dU-zw-9Np"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="xRe-gl-93f">
+                                <connections>
+                                    <segue destination="teN-CC-Qao" kind="show" identifier="AddItem" id="6dU-zw-9Np"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="Siw-hU-1Df">
+                                <connections>
+                                    <action selector="startEditing:" destination="BAD-a9-QQH" id="W0h-2z-SAV"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                         <string key="userLabel">Name
 of the Checklis</string>
                     </navigationItem>
@@ -173,7 +180,7 @@ of the Checklis</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the item " textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NU8-Mi-A9C">
-                                                    <rect key="frame" x="-3" y="0.0" width="413" height="34"/>
+                                                    <rect key="frame" x="-4" y="0.0" width="414" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
